@@ -97,7 +97,7 @@ li.dropdown {
     top: 0px;
     left: 0px;
     background-color: #0a0103;
-    background-image: url(Images/Bg.jpg);
+    background-image: url(wheels/Images/Bg.jpg);
     background-position: center top;
     background-size: auto;
     background-repeat: no-repeat;
@@ -106,7 +106,7 @@ li.dropdown {
 }
 
 .Bikes {
-    background-image: url("Images/Bikes.jpg");
+    background-image: url("wheels/Images/Bikes.jpg");
     background-position: center;
 }
 
