@@ -124,7 +124,6 @@ li.dropdown {
     border-style: outset;
     cursor: default;
     text-align: center;
-    display: inline-block;
     -webkit-transition: 0.1s all;
     -moz-transition: 0.1s all;
     -ms-transition: 0.1s all;
