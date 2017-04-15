@@ -7,7 +7,6 @@
 /*dropdown*/
 
 .nav {
-	background-color: green;
     display: block;
     background-position: absolute;
 		z-index: 99;
@@ -84,6 +83,7 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+				border-radius: 5px;
 }
 
 
