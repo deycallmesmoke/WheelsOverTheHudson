@@ -125,33 +125,33 @@ li.dropdown {
 }
 
 .Bikes {
-    background-image: url("../Images/Bikes.jpg");
+    background-image: url("Images/Bikes.jpg");
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .Scooter {
-    background-image: url("../Images/Scooter.png");
+    background-image: url("Images/Scooter.png");
     background-position: center;
 }
 
 .Moped {
-    background-image: url("../Images/Moped.png");
+    background-image: url("Images/Moped.png");
     background-position: center;
 }
 
 .Segway {
-    background-image: url("../Images/Segway.png");
+    background-image: url("Images/Segway.png");
     background-position: center;
 }
 
 .Skateboard {
-    background-image: url("../Images/Skateboard.png");
+    background-image: url("Images/Skateboard.png");
     background-position: center;
 }
 
 .Tbike {
-    background-image: url("../Images/Tbike.png");
+    background-image: url("Images/Tbike.png");
     background-position: center;
 }
 
