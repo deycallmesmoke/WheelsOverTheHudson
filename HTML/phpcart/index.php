@@ -23,38 +23,6 @@ if(isset($_GET['page'])){
 }
 
 ?>
-<h1>Cart</h1>
-<?php
-
-    if(isset($_SESSION['cart'])){
-
-        $sql="SELECT * FROM products WHERE id_product IN (";
-
-        foreach($_SESSION['cart'] as $id => $value) {
-            $sql.=$id.",";
-        }
-
-        $sql=substr($sql, 0, -1).") ORDER BY name ASC";
-        $query=mysql_query($sql);
-        while($row=mysql_fetch_array($query)){
-
-        ?>
-            <p><?php echo $row['name'] ?> x <?php echo $_SESSION['cart'][$row['id_product']]['quantity'] ?></p>
-        <?php
-
-        }
-    ?>
-        <hr />
-        <a href="index.php?page=cart">Go to cart</a>
-    <?php
-
-    }else{
-
-        echo "<p>Your Cart is empty. Please add some products.</p>";
-
-    }
-
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
