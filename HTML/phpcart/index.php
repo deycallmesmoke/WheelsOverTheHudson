@@ -43,7 +43,7 @@ if(isset($_GET['page'])){
 
     if(isset($_SESSION['cart'])){
 
-        $sql="SELECT * FROM products WHERE id_product IN (";
+        $sql="SELECT * FROM ShopingCart WHERE id_product IN (";
 
         foreach($_SESSION['cart'] as $id => $value) {
             $sql.=$id.",";

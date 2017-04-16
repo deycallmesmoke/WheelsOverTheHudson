@@ -10,7 +10,7 @@
 
         }else{
 
-            $sql_s="SELECT * FROM products
+            $sql_s="SELECT * FROM ShopingCart
                 WHERE id_product={$id}";
             $query_s=mysql_query($sql_s);
             if(mysql_num_rows($query_s)!=0){
@@ -49,8 +49,8 @@
 
         <?php
 
-            $sql="SELECT * FROM products ORDER BY name ASC";
-            $query=mysql_query($sql); 
+            $sql="SELECT * FROM ShopingCart ORDER BY name ASC";
+            $query=mysql_query($sql);
 
             while ($row=mysql_fetch_array($query)) {
 
