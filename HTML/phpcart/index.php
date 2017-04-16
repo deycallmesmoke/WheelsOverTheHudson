@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("phpcart/includes/connection.php");
+require("http://10.42.1.219/phpcart/includes/connection.php");
 if(isset($_GET['page'])){
 
     $pages=array("products", "cart");
