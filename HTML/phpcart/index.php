@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("includes/connection.php");
+require("phpcart/includes/connection.php");
 if(isset($_GET['page'])){
 
     $pages=array("products", "cart");
@@ -22,7 +22,7 @@ if(isset($_GET['page'])){
 }
 
 ?>
-<h1>Cart</h1> 
+<h1>Cart</h1>
 <?php
 
     if(isset($_SESSION['cart'])){
