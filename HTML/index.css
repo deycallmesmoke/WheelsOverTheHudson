@@ -91,7 +91,8 @@ li.dropdown {
 }
 
 .dropdown-iframe {
-
+width: 510px;
+height: 340px;
     margin: -3px;
     text-align: center;
     position: fixed ;
