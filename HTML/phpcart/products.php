@@ -12,9 +12,9 @@
 
             $sql_s="SELECT * FROM products
                 WHERE id_product={$id}";
-            $query_s=mssql_query($sql_s); 
-            if(mssql_num_rows($query_s)!=0){
-                $row_s=mssql_fetch_array($query_s);
+            $query_s=mysql_query($sql_s);
+            if(mysql_num_rows($query_s)!=0){
+                $row_s=mysql_fetch_array($query_s);
 
                 $_SESSION['cart'][$row_s['id_product']]=array(
                         "quantity" => 1,
@@ -50,9 +50,9 @@
         <?php
 
             $sql="SELECT * FROM products ORDER BY name ASC";
-            $query=mssql_query($sql);
+            $query=mysql_query($sql); 
 
-            while ($row=mssql_fetch_array($query)) {
+            while ($row=mysql_fetch_array($query)) {
 
         ?>
             <tr>
