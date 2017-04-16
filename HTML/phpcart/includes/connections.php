@@ -1,9 +1,9 @@
 <?php
 
-    $server="localhost";
+    $server="10.42.0.241";
     $user="ShopingCart";
     $pass="Wheels228!";
-    $db="ShopingCart";
+    $db="shopingcart";
 
     // connect to mysql
 
