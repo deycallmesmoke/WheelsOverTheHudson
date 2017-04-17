@@ -1,13 +1,13 @@
-<% 	
+<%
 Dim cnnSimple  ' ADO connection
 Dim rstSimple  ' ADO recordset
 Set cnnSimple = Server.CreateObject("ADODB.Connection")
 
 ' DSN
-cnnSimple.Open "DRIVER={MySQL ODBC 5.3 Unicode Driver};SERVER=[mySQL server];
-DATABASE=[DBName];UID=[DBUser];PASSWORD=[DB Password];"
+cnnSimple.Open "DRIVER={MySQL ODBC 5.3 Unicode Driver};SERVER=[10.42.0.241];
+DATABASE=[ShopingCart];UID=[ShopingCart];PASSWORD=[Wheels228!];"
 
-Set rstSimple = cnnSimple.Execute("SELECT * FROM tblTest")
+Set rstSimple = cnnSimple.Execute("SELECT * FROM ShopingCart")
 
 %>
 <P> Connecting to mySQL DB</P>
