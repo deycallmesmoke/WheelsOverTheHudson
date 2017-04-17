@@ -9,7 +9,7 @@ Dim rstSimple  ' ADO recordset
 Set cnnSimple = Server.CreateObject("ADODB.Connection")
 
 ' DSN
-cnnSimple.Open "Provider=MSDASQL;DRIVER={MySQL ODBC 5.2 Driver};SERVER=[10.42.0.241];DATABASE=[ShopingCart];UID=[ShopingCart];PASSWORD=[Wheels228!];"
+cnnSimple.Open "DRIVER={MySQL ODBC 5.2 Unicode Driver};SERVER=[10.42.0.241];DATABASE=[ShopingCart];UID=[ShopingCart];PASSWORD=[Wheels228!];"
 
 Set rstSimple = cnnSimple.Execute("SELECT * FROM ShopingCart")
 
