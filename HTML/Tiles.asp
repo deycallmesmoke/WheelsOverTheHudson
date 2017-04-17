@@ -5,7 +5,7 @@ Set cnnSimple = Server.CreateObject("ADODB.Connection")
 
 ' DSN
 cnnSimple.Open "DRIVER={MySQL ODBC 5.2.7 Unicode Driver};SERVER=[10.42.0.241];
-DATABASE=[ShopingCart];UID=[ShopingCart];PASSWORD=[ShopingCart];"
+DATABASE=[ShopingCart];UID=[ShopingCart];PASSWORD=[Wheels228!];"
 
 Set rstSimple = cnnSimple.Execute("SELECT * FROM ShopingCart")
 
