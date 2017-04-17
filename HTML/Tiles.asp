@@ -1,3 +1,8 @@
+<html>
+<head>
+</head>
+<body>
+
 <%
 Dim cnnSimple  ' ADO connection
 Dim rstSimple  ' ADO recordset
@@ -29,3 +34,6 @@ Loop
 
 cnnSimple.close
 %>
+
+</body>
+</html>
