@@ -131,22 +131,26 @@ DATABASE=[ShopingCart];UID=[ShopingCart];PASSWORD=[DB Wheels228!];"
 Set rstSimple = cnnSimple.Execute("SELECT * FROM tblTest")
 
 %>
-<P> Connecting to mySQL DB</P>
+		<P> Connecting to mySQL DB</P>
 
-<table border="1">
-<%
+		<table border="1">
+			<%
 Do While Not rstSimple.EOF
  %>
- <tr>
-  <td><%= rstSimple.Fields("id").Value %></td>
-  <td><%= rstSimple.Fields("name").Value %></td>
- </tr>
- <%
+				<tr>
+					<td>
+						<%= rstSimple.Fields("id").Value %>
+					</td>
+					<td>
+						<%= rstSimple.Fields("name").Value %>
+					</td>
+				</tr>
+				<%
  rstSimple.MoveNext
 Loop
 %>
-</table>
-<%
+		</table>
+		<%
 ' Close our recordset and connection and dispose of the objects rstSimple.Close Set rstSimple = Nothing cnnSimple.Close Set cnnSimple = Nothing
 
 cnnSimple.close
