@@ -3,37 +3,40 @@
 </head>
 <body>
 
-<%
-Dim cnnSimple  ' ADO connection
-Dim rstSimple  ' ADO recordset
-Set cnnSimple = Server.CreateObject("ADODB.Connection")
+  <%
+  Dim oConn, oRs
+  Dim qry, connectstr
+  Dim db_name, db_username, db_userpassword
+  Dim db_server
 
-' DSN
-cnnSimple.Open "DRIVER={MySQL ODBC 5.2 Unicode Driver};SERVER=[10.42.0.241];DATABASE=[ShopingCart];UID=[ShopingCart];PASSWORD=[Wheels228!];"
+  db_server = "localhost"
+  db_name = "shopingcart"
+  db_username = "ShopingCart"
+  db_userpassword = "Wheels228!"
+  fieldname = "name"
+  tablename = "shopingcart"
 
-Set rstSimple = cnnSimple.Execute("SELECT * FROM ShopingCart")
+  connectstr = "Driver={MySQL ODBC 3.51 Driver};SERVER=" & db_server & ";DATABASE=" & db_name & ";UID=" & db_username & ";PWD=" & db_userpassword
 
-%>
-<P> Connecting to mySQL DB</P>
+  Set oConn = Server.CreateObject("ADODB.Connection")
+  oConn.Open connectstr
 
-<table border="1">
-<%
-Do While Not rstSimple.EOF
- %>
- <tr>
-  <td><%= rstSimple.Fields("id").Value %></td>
-  <td><%= rstSimple.Fields("name").Value %></td>
- </tr>
- <%
- rstSimple.MoveNext
-Loop
-%>
-</table>
-<%
-' Close our recordset and connection and dispose of the objects rstSimple.Close Set rstSimple = Nothing cnnSimple.Close Set cnnSimple = Nothing
+  qry = "SELECT * FROM " & tablename
 
-cnnSimple.close
-%>
+  Set oRS = oConn.Execute(qry)
 
+  if not oRS.EOF then
+  while not oRS.EOF
+  response.write ucase(fieldname) & ": " & oRs.Fields(fieldname) & "
+  "
+  oRS.movenext
+  wend
+  oRS.close
+  end if
+
+  Set oRs = nothing
+  Set oConn = nothing
+
+  %>
 </body>
 </html>
