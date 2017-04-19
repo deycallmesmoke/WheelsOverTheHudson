@@ -4,7 +4,7 @@
 
   <iframe onload="null(#)"id="frame" src="http://10.42.1.219/wheels/phpcart/index.php">
 </iframe>
-<%@ Language= "Javascript" %> 
+<%@ Language= "Javascript" %>
 <%
 // This function ONLY works for iFrames of the same origin as their parent
 function iFrameReady(iFrame, fn) {
