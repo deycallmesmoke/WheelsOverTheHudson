@@ -2,10 +2,10 @@
 <head>
 </head>
 <body>
-<iframe src="phpcart/products.asp" style="display:none"></iframe>
+<iframe src="phpcart/index.php" style="display:none"></iframe>
   <%
   Option Explicit
-  
+
   Dim doc, table
   Set doc = CreateObject("htmlfile")
 
