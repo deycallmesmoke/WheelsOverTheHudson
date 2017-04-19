@@ -2,13 +2,23 @@
 <head>
 </head>
 <body>
-
+<iframe src="phpcart/products.asp" style="display:none"></iframe>
   <%
-  set XmlObj = Server.CreateObject("Microsoft.XMLHTTP")
-  XmlObj.open "POST", "phpcart/index.php"; & request.form("name") & "&firstname=" & request.form("name") & "&action=" & request.form("id") , false
-  XmlObj.send formatdata = XmlObj.responseText
-  Response.write(formatdata)
-  Set XmlObj = nothing
+  Option Explicit
+  
+  Dim doc, table
+  Set doc = CreateObject("htmlfile")
+
+  ' ... set strResponse1 ...
+
+  doc.write strResponse1
+
+  For Each table In doc.getElementById("php").contentWindow.doc.body.getElementsByTagName("TABLE")
+      If table.className = "dataTableParent" Then
+          ' use DOM methods to navigate to correct table cell and extract data
+          ' with the help of, e.g., innerText()
+      End If
+  Next
   %>
 </body>
 </html>
