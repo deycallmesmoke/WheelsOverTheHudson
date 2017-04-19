@@ -3,22 +3,22 @@
 </head>
 <body>
 <iframe id="php" src="phpcart/index.php" style="display:none"></iframe>
+
+  <%@ Language= "Javascript" %> 
   <%
-  Option Explicit
 
-  Dim doc, table
-  Set doc = CreateObject("htmlfile")
+  var frame = document.getElementById("php").contentWindow.doc.body
+      table = frame.getElementsByTagName("TABLE"),
+      cells = table.getElementsByTagName('td');
 
-  ' ... set strResponse1 ...
-
-  doc.write strResponse1
-
-  For Each table In doc.getElementById("php").contentWindow.doc.body.getElementsByTagName("TABLE")
-      If table.className = "dataTableParent" Then
-          ' use DOM methods to navigate to correct table cell and extract data
-          ' with the help of, e.g., innerText()
-      End If
-  Next
+  for (var i=0,len=cells.length; i<len; i++){
+      cells[i].onclick = function(){
+          console.log(this.innerHTML);
+          /* if you know its going to be numeric:
+          console.log(parseInt(this.innerHTML),10);
+          */
+      }
+  }
   %>
 </body>
 </html>
