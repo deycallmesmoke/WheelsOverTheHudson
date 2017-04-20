@@ -13,6 +13,7 @@
                     return xmlhttp.responseText;
                 }
             }
+            scriptObject.async = false
             xmlhttp.open("GET", theUrl, false);
             xmlhttp.send();
         }
