@@ -176,20 +176,20 @@ li.dropdown {
     background-position: center;
 }
 .RollerSkate {
-    background-image: url("Images/blackquads.jpg");
+    background-image: url("Images/transquad.png");
     background-position: center;
 }
 .ChildSeat {
-    background-image: url("Images/bikewithchildseat2.png");
+    background-image: url("Images/transchildseat.png");
     background-position: center;
 }
 
 .Seater {
-    background-image: url("Images/fiveseaterbike.png");
+    background-image: url("Images/transparentfiveseat.png");
     background-position: center;
 }
 .Inline {
-    background-image: url("Images/inline.jpg");
+    background-image: url("Images/transinline.png");
     background-position: center;
 }
 .Tbike {
