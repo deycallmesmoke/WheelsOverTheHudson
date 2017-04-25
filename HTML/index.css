@@ -54,7 +54,7 @@ li a, .dropbtn {
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: black;
 }
 
 li.dropdown {
@@ -122,7 +122,10 @@ li.dropdown {
     max-height: 340px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.5);
 }
-
+/* Link for the logo image */
+.logo {
+ 
+}
 
 /*THIS IS THE CSS FOR THE TILES*/
 
@@ -172,7 +175,23 @@ li.dropdown {
     background-image: url("Images/Skateboard.png");
     background-position: center;
 }
+.RollerSkate {
+    background-image: url("Images/blackquads.jpg");
+    background-position: center;
+}
+.ChildSeat {
+    background-image: url("Images/bikewithchildseat2.png");
+    background-position: center;
+}
 
+.Seater {
+    background-image: url("Images/fiveseaterbike.png");
+    background-position: center;
+}
+.Inline {
+    background-image: url("Images/inline.jpg");
+    background-position: center;
+}
 .Tbike {
     background-image: url("Images/Tbike.png");
     background-position: center;
@@ -261,3 +280,8 @@ div.metro-tile:hover {
 }
 ########################################################################################################
 */
+/* is teh invisble class that meakes all text within it invisible*/
+.invisible{
+	visibility:hidden;
+	line-height:20%;
+}
