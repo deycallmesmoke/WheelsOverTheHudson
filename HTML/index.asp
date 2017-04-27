@@ -89,46 +89,47 @@ function myFunction(x) {
 
 		<!-- For scaling only use 3 Tiles per row -->
 
-		<table width="90%" height="20%">
+		<%
+Response.Write "hello"
+Dim cnnSimple  ' ADO connection
+Dim rstSimple  ' ADO recordset
+Set cnnSimple = Server.CreateObject("ADODB.Connection")
+
+' DSN
+cnnSimple.Open "localhost"
+
+Set rstSimple = cnnSimple.Execute("SELECT * FROM ShopingCart")
+
+%>
+<table width="90%" height="20%">
 			<tr>
-				<td class="mid-tile">
-					<div class="metro-tile Skateboard autosize">Skateboard</div>
+<%
+Do While Not rstSimple.EOF
+ %>
+
+				<td class="<%= rstSimple.Fields("tile-size").Value %>-tile">
+					<div class="metro-tile <%= rstSimple.Fields("name").Value %> autosize"><%= rstSimple.Fields("description").Value %> </div>
 				</td>
-				<td class="small-tile">
-					<div class="metro-tile Scooter autosize">Scooter</div>
-				</td>
-				<td class="latge-tile">
-					<div class="metro-tile Moped autosize ">Moped</div>
-				</td>
+<%
+i = i+1
+If i Mod 3 = 0 then Response.Write "</table><table width=""90%"" height=""20%"">" 
+
+%>
+
+ <%
+ rstSimple.MoveNext
+
+Loop
+%>
 			</tr>
 		</table>
-		<table width="90%" height="20%">
-			<tr>
-				<td class="latge-tile">
-					<div class="metro-tile Tbike autosize">Tandom Bike</div>
-				</td>
-				<td class="mid-tile">
-					<div class="metro-tile RollerSkate autosize">Roller Skates</div>
-				</td>
-				<td class="small-tile">
-					<div class="metro-tile ChildSeat autosize">Child Seat</div>
-				</td>
-			</tr>
-		</table>
-		<table width="90%" height="20%">
-			<tr>
-				<td class="mid-tile">
-					<div class="metro-tile Segway autosize">Segway</div>
-				</td>
-				<td class="latge-tile">
-					<div class="metro-tile Seater autosize">5 Seater</div>
-					</td>
-					<td class="small-tile">
-						<div class="metro-tile Inline autosize">Inline Skates</div>
-					</td>
-				
-			</tr>
-		</table>
+
+<%
+' Close our recordset and connection and dispose of the objects rstSimple.Close Set rstSimple = Nothing cnnSimple.Close Set cnnSimple = Nothing
+
+cnnSimple.close
+%>
+
 	</div>
 
 	

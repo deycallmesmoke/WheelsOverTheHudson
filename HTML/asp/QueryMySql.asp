@@ -1,5 +1,6 @@
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="../index.css">
 </head>
 <body>
 
@@ -15,21 +16,29 @@ cnnSimple.Open "localhost"
 Set rstSimple = cnnSimple.Execute("SELECT * FROM ShopingCart")
 
 %>
-<P> Connecting to mySQL DB</P>
-
-<table border="1">
+<table width="90%" height="20%">
+			<tr>
 <%
-Do While Not rstSimple.EOF Response.Write "hello"
+Do While Not rstSimple.EOF
  %>
- <tr>
-  <td><%= rstSimple.Fields("price").Value %></td>
-  <td><%= rstSimple.Fields("name").Value %></td>
- </tr>
+
+				<td class="<%= rstSimple.Fields("tile-size").Value %>-tile">
+					<div class="metro-tile <%= rstSimple.Fields("name").Value %> autosize"><%= rstSimple.Fields("description").Value %> </div>
+				</td>
+<%
+i = i+1
+If i Mod 3 = 0 then Response.Write "</table><table width=""90%"" height=""20%"">" 
+
+%>
+
  <%
  rstSimple.MoveNext
+
 Loop
 %>
-</table>
+			</tr>
+		</table>
+
 <%
 ' Close our recordset and connection and dispose of the objects rstSimple.Close Set rstSimple = Nothing cnnSimple.Close Set cnnSimple = Nothing
 
